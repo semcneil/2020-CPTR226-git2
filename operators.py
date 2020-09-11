@@ -5,7 +5,7 @@
 # This is a file to demonstrate open source software collaboration for the
 # 2020 CPTR 226 class. This is the second way of using git and GitHub.
 #
-# Author: Seth McNeill
+# Author: Kristin Sydow
 # Date: 2020 September 11
 # Version: 0.1
 # Course: CPTR 226
@@ -23,6 +23,18 @@ import doctest   # used for testing the code from docstring examples
 
 
 # Functions
+def greater_than_something(num1, num2):
+    """This function checks if the first number is greater than the second.
+
+        >>> greater_than_something(2,3)
+        False
+        >>> greater_than_something(-4, 4)
+        False
+        >>> greater_than_something(-3, -5)
+        True
+
+    """
+    return(num1 > num2)
 
 
 # This runs if the file is run as a script vs included as a module
@@ -38,6 +50,8 @@ if __name__ == '__main__':
         doctest.testmod(verbose=True)  # run the tests in verbose mode
 
     print("-------------------")
-
+    added = greater_than_something(4, 5)
+    print(f'4 is greater than 5 = {added}')
+    
     end_time = datetime.datetime.now()    # save the script end time
     print(f'{__file__} took {end_time - start_time} s to complete')
