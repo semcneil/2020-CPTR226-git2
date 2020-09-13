@@ -23,6 +23,19 @@ import doctest   # used for testing the code from docstring examples
 
 
 # Functions
+def not_equal(num1, num2):
+    """This function determines if two numbers are equal
+
+        >>> not_equal(2,3)
+        True
+        >>> not_equal(4, 4)
+        False
+        >>> not_equal(-3, -5)
+        True
+
+    """
+    return(num1 != num2)
+
 
 
 # This runs if the file is run as a script vs included as a module
@@ -38,6 +51,8 @@ if __name__ == '__main__':
         doctest.testmod(verbose=True)  # run the tests in verbose mode
 
     print("-------------------")
+    added = not_equal(4, 5)
+    print(f'4 != 5 = {added}')
 
     end_time = datetime.datetime.now()    # save the script end time
     print(f'{__file__} took {end_time - start_time} s to complete')
