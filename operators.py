@@ -88,6 +88,21 @@ def not_equal(num1, num2):
     """
     return(num1 != num2)
 
+def sequence(find, numbers):
+    """This function checks to see if an object is in a sequence
+
+        >>> sequence(1, [1,2,3,4])
+        1
+        >>> sequence("i", "Hello world")
+        'Nothing'
+        >>> sequence(4, (2,4,6))
+        4
+    """
+    for n in numbers:
+        if find == n:
+            return(n)
+    else:
+        return("Nothing")
 
 # This runs if the file is run as a script vs included as a module
 if __name__ == '__main__':
@@ -117,5 +132,9 @@ if __name__ == '__main__':
     modulus = modulus(10, 4)
     print(f'The remainder is {modulus}')
 
+    sequenced = sequence(6,[1,2,3,4,5,6])
+    print(f'{sequenced} is in the sequence')
+
     end_time = datetime.datetime.now()    # save the script end time
     print(f'{__file__} took {end_time - start_time} s to complete')
+
