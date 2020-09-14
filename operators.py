@@ -9,6 +9,9 @@
 # Date: 2020 September 14
 # Author: Kristin Sydow
 # Date: 2020 September 11
+# Author: Chrisheline Kalawo
+# Date: 2020 September 14
+# Version: 0.1
 # Course: CPTR 226
 """This is a file to demonstrate open source software collaboration for the
    2020 CPTR 226 class.
@@ -64,6 +67,14 @@ def greater_than_something(num1, num2):
     return(num1 > num2)
 
 
+def modulus(a, b):
+    """This function finds the remainder from a division
+        >>> modulus(7, 2)
+        1 
+    """
+    return(a % b)
+
+
 # This runs if the file is run as a script vs included as a module
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
@@ -87,5 +98,8 @@ if __name__ == '__main__':
     added = greater_than_something(4, 5)
     print(f'4 is greater than 5 = {added}')
     
+    modulus = modulus(10, 4)
+    print(f'The remainder is {modulus}')
+
     end_time = datetime.datetime.now()    # save the script end time
     print(f'{__file__} took {end_time - start_time} s to complete')
