@@ -5,8 +5,8 @@
 # This is a file to demonstrate open source software collaboration for the
 # 2020 CPTR 226 class. This is the second way of using git and GitHub.
 #
-# Author: Seth McNeill
-# Date: 2020 September 11
+# Author: Chrisheline Kalawo
+# Date: 2020 September 14
 # Version: 0.1
 # Course: CPTR 226
 """This is a file to demonstrate open source software collaboration for the
@@ -23,7 +23,12 @@ import doctest   # used for testing the code from docstring examples
 
 
 # Functions
-
+def modulus(a, b):
+    """This function finds the remainder from a division
+        >>> modulus(7, 2)
+        1 
+    """
+    return(a % b)
 
 # This runs if the file is run as a script vs included as a module
 if __name__ == '__main__':
@@ -38,6 +43,9 @@ if __name__ == '__main__':
         doctest.testmod(verbose=True)  # run the tests in verbose mode
 
     print("-------------------")
+
+    modulus = modulus(10, 4)
+    print(f'The remainder is {modulus}')
 
     end_time = datetime.datetime.now()    # save the script end time
     print(f'{__file__} took {end_time - start_time} s to complete')
