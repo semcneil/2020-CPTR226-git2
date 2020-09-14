@@ -3,14 +3,12 @@
 # operators.py
 #
 # This is a file to demonstrate open source software collaboration for the
-# 2020 CPTR 226 class. This is the second way of using git and GitHub.
+# 2020 CPTR 226 class.
 #
-# Author: Andrew Cabrera
-# Date: 2020 September 14
+# Author: Jared Schiavone
+# Date: 2020 September 07
 # Author: Kristin Sydow
-# Date: 2020 September 11
-# Author: Chrisheline Kalawo
-# Date: 2020 September 14
+# Date: 2020 September 8
 # Version: 0.1
 # Course: CPTR 226
 """This is a file to demonstrate open source software collaboration for the
@@ -27,6 +25,54 @@ import doctest   # used for testing the code from docstring examples
 
 
 # Functions
+def multiply_something(num1, num2):
+    """this function will multiply num1 and num2
+
+        >>> multiply_something(2, 6)
+        12
+        >>> multiply_something(-2, 6)
+        -12
+        
+    """
+    return(num1 * num2)
+
+
+def minus_something(num1, num2):
+    """This function substracts two numbers and returns the result
+        
+        >>> minus_something(8, 5)
+        3
+    """
+    return(num1 - num2)
+
+  
+def not_equal(num1, num2):
+    """This function determines if two numbers are equal
+
+        >>> not_equal(2,3)
+        True
+        >>> not_equal(4, 4)
+        False
+        >>> not_equal(-3, -5)
+        True
+    """
+    return(num1 != num2)
+  
+
+def greater_than_something(num1, num2):
+    """This function checks if the first number is greater than the second.
+
+        >>> greater_than_something(2,3)
+        False
+        >>> greater_than_something(-4, 4)
+        False
+        >>> greater_than_something(-3, -5)
+        True
+
+    """
+    return(num1 > num2)
+  
+
 def is_equal(a, b):
     """This function checks if the two variables are equal to each other.
 
@@ -41,52 +87,6 @@ def is_equal(a, b):
     """
     return(a == b)
 
-
-def exponet(num1, num2):
-    """"This function exponentiates 2 numbers
-    
-        >>> exponet(2, 2)
-        4
-        >>> exponet(2, -2)
-        0.25
-    """
-    return(num1**num2)
-
-
-def greater_than_something(num1, num2):
-    """This function checks if the first number is greater than the second.
-
-        >>> greater_than_something(2,3)
-        False
-        >>> greater_than_something(-4, 4)
-        False
-        >>> greater_than_something(-3, -5)
-        True
-
-    """
-    return(num1 > num2)
-
-
-def modulus(a, b):
-    """This function finds the remainder from a division
-        >>> modulus(7, 2)
-        1 
-    """
-    return(a % b)
-
-
-def not_equal(num1, num2):
-    """This function determines if two numbers are equal
-
-        >>> not_equal(2,3)
-        True
-        >>> not_equal(4, 4)
-        False
-        >>> not_equal(-3, -5)
-        True
-
-    """
-    return(num1 != num2)
 
 def sequence(find, numbers):
     """This function checks to see if an object is in a sequence
@@ -104,6 +104,21 @@ def sequence(find, numbers):
     else:
         return("Nothing")
 
+def less_than_something(num1, num2): #Conner Coe
+    """This function checks if the first number is less than the second.
+
+        >>> less_than_something(5,9)
+        True
+        >>> less_than_something(2, 4)
+        True
+        >>> less_than_something(-8, -4)
+        False
+
+    """
+    return(num1 < num2)
+
+
+
 # This runs if the file is run as a script vs included as a module
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
@@ -117,24 +132,27 @@ if __name__ == '__main__':
         doctest.testmod(verbose=True)  # run the tests in verbose mode
 
     print("-------------------")
+    print()
+    multiplied = multiply_something(2, 6)
+    print(f'multiply 2 x 6 = {multiplied}')
+
+    subtracted = minus_something(8, 5)
+    print(f'Subtracting 8 - 5 = {subtracted}')
+
     added = not_equal(4, 5)
     print(f'4 != 5 = {added}')
+    
+    gt = greater_than_something(4, 5)
+    print(f'4 is greater than 5 = {gt}')
 
     equal = is_equal(5, 5)
     print(f'Is 5 equal to 5? {equal}')
 
-    exponentiated = exponet(2, 2)
-    print(f'2**2 = {exponentiated}')
-
-    added = greater_than_something(4, 5)
-    print(f'4 is greater than 5 = {added}')
-    
-    modulus = modulus(10, 4)
-    print(f'The remainder is {modulus}')
-
-    sequenced = sequence(6,[1,2,3,4,5,6])
+    sequenced = sequence(6, [1, 2, 3, 4, 5, 6])
     print(f'{sequenced} is in the sequence')
+
+    lt = less_than_something(1, 3) #Conner Coe
+    print(f'1 is less than 3 = {lt}')
 
     end_time = datetime.datetime.now()    # save the script end time
     print(f'{__file__} took {end_time - start_time} s to complete')
-
