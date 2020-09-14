@@ -23,7 +23,15 @@ import doctest   # used for testing the code from docstring examples
 
 
 # Functions
-
+def exponet(num1, num2):
+    """"This function exponentiates 2 numbers
+    
+        >>> exponet(2, 2)
+        4
+        >>> exponet(2, -2)
+        0.25
+    """
+    return(num1**num2)
 
 # This runs if the file is run as a script vs included as a module
 if __name__ == '__main__':
@@ -38,6 +46,8 @@ if __name__ == '__main__':
         doctest.testmod(verbose=True)  # run the tests in verbose mode
 
     print("-------------------")
+    exponentiated = exponet(2, 2)
+    print(f'2**2 = {exponentiated}')
 
     end_time = datetime.datetime.now()    # save the script end time
     print(f'{__file__} took {end_time - start_time} s to complete')
