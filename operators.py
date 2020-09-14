@@ -5,8 +5,8 @@
 # This is a file to demonstrate open source software collaboration for the
 # 2020 CPTR 226 class. This is the second way of using git and GitHub.
 #
-# Author: Seth McNeill
-# Date: 2020 September 11
+# Author: Andrew Cabrera
+# Date: 2020 September 14
 # Version: 0.1
 # Course: CPTR 226
 """This is a file to demonstrate open source software collaboration for the
@@ -23,6 +23,19 @@ import doctest   # used for testing the code from docstring examples
 
 
 # Functions
+def is_equal(a, b):
+    """This function checks if the two variables are equal to each other.
+
+        >>> is_equal(2, 2)
+        True
+        >>> is_equal(2, 3)
+        False
+        >>> is_equal("Dog", "Dog")
+        True
+        >>> is_equal("Cat", "Dog")
+        False
+    """
+    return(a == b)
 
 
 # This runs if the file is run as a script vs included as a module
@@ -38,6 +51,7 @@ if __name__ == '__main__':
         doctest.testmod(verbose=True)  # run the tests in verbose mode
 
     print("-------------------")
-
+    equal = is_equal(5, 5)
+    print(f'Is 5 equal to 5? {equal}')
     end_time = datetime.datetime.now()    # save the script end time
     print(f'{__file__} took {end_time - start_time} s to complete')
