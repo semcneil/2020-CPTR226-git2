@@ -75,6 +75,20 @@ def modulus(a, b):
     return(a % b)
 
 
+def not_equal(num1, num2):
+    """This function determines if two numbers are equal
+
+        >>> not_equal(2,3)
+        True
+        >>> not_equal(4, 4)
+        False
+        >>> not_equal(-3, -5)
+        True
+
+    """
+    return(num1 != num2)
+
+
 # This runs if the file is run as a script vs included as a module
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
@@ -88,6 +102,8 @@ if __name__ == '__main__':
         doctest.testmod(verbose=True)  # run the tests in verbose mode
 
     print("-------------------")
+    added = not_equal(4, 5)
+    print(f'4 != 5 = {added}')
 
     equal = is_equal(5, 5)
     print(f'Is 5 equal to 5? {equal}')
