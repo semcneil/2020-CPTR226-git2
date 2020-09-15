@@ -133,7 +133,7 @@ if __name__ == '__main__':
 
     print("-------------------")
     print()
-    multiplied = multiply_something(2, 6)
+    multiplied = multiply_something(2, 6)  # able griego
     print(f'multiply 2 x 6 = {multiplied}')
 
     subtracted = minus_something(8, 5)
